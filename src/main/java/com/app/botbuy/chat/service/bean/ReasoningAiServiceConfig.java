@@ -20,7 +20,7 @@ public class ReasoningAiServiceConfig {
     @Bean
     public ReasoningAiService reasoningAiService() {
         return AiServices.builder(ReasoningAiService.class)
-                .chatLanguageModel(openAiChatModel)
+                .chatModel(openAiChatModel)
                 .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(10))
                 .build();
     }

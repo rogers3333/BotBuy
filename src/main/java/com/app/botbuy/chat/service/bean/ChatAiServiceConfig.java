@@ -23,7 +23,7 @@ public class ChatAiServiceConfig {
     @Bean
     public ChatAiService chatAiService() {
         return AiServices.builder(ChatAiService.class)
-                .streamingChatLanguageModel(streamingChatLanguageModel)
+                .streamingChatModel(streamingChatLanguageModel)
                 .chatMemoryProvider(memoryId -> MessageWindowChatMemory.builder()
                         .id(memoryId)
                         .maxMessages(20)

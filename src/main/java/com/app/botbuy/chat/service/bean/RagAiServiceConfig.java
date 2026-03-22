@@ -49,7 +49,7 @@ public class RagAiServiceConfig {
     @Bean("ragStreamAiService")
     public RagAiService ragStreamAiService() {
         return AiServices.builder(RagAiService.class)
-                .streamingChatLanguageModel(streamingChatLanguageModel)
+                .streamingChatModel(streamingChatLanguageModel)
                 .chatMemoryProvider(memoryId -> messageWindow(memoryId, chatMemoryMaxLength))
                 .tools(transferHumanTool, conversationEndTool)
                 .retrievalAugmentor(defaultRetrievalAugmentor)
@@ -61,7 +61,7 @@ public class RagAiServiceConfig {
     @Bean("ragAiService")
     public RagAiService ragAiService() {
         return AiServices.builder(RagAiService.class)
-                .chatLanguageModel(openAiChatModel)
+                .chatModel(openAiChatModel)
                 .chatMemoryProvider(memoryId -> messageWindow(memoryId, chatMemoryMaxLength))
                 .tools(transferHumanTool, conversationEndTool)
                 .retrievalAugmentor(defaultRetrievalAugmentor)
